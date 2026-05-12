@@ -84,5 +84,34 @@
 	
 <a href="https://archiveofourown.org/works/80722706">Read the fanfic here!</a>
 
+<style>
+.emoji {
+	position: fixed;
+	top: -50px;
+	font-size: 20px;
+	animation: fall linear infinite;
+}
+
+@keyframes fall {
+	to { transform: translateY(110vh); }
+}
+</style>
+
+<script>
+const emojis = ['🌊', '💜', '✨'];
+
+const interval = setInterval(() => {
+	const el = document.createElement('div');
+	el.classList.add('emoji');
+	el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+	el.style.left = Math.random() * 100 + 'vw';
+	el.style.animationDuration = Math.random() * 3 + 2 + 's';
+	document.body.appendChild(el);
+	setTimeout(() => el.remove(), 5000);
+}, 500);
+
+setTimeout(() => clearInterval(interval), 2000);
+</script>
+
 </html>
 </body>
